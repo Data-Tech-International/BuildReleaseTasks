@@ -1,0 +1,36 @@
+{
+    "manifestVersion": 1,
+    "id": "CreateLocalUser",
+    "name": "Create local user",
+    "version": "0.2.0",
+    "publisher": "DataTechInternational",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "A task creates local user and adds him to local groups",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "CreateLocalUser/icon.png"        
+    },
+    "files": [
+        {
+            "path": "CreateLocalUser"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "CreateLocalUser",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "CreateLocalUser"
+            }
+        }
+    ]
+}

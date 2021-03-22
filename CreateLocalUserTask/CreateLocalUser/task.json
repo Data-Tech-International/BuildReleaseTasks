@@ -1,0 +1,60 @@
+{
+  "id": "8ab90060-87e6-11eb-b1ba-7f6c1a371e5d",
+  "name": "CreateLocalUser",
+  "friendlyName": "CreateLocalUser",
+  "description": "This task creates local user and adds him to local groups",
+  "author": "DTI d.o.o Belgrade, Serbia",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "2",
+    "Patch": "0"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "CreateLocalUser $(message)",
+  "inputs": [
+    {
+      "name": "ComputerName",
+      "type": "string",
+      "label": "Computer Name",
+      "defaultValue": "Computer",
+      "required": true,
+      "helpMarkDown": "Computer Name"
+    },
+    {
+      "name": "Username",
+      "type": "string",
+      "label": "Username",
+      "defaultValue": "Username",
+      "required": true,
+      "helpMarkDown": "Username"
+    },
+    {
+      "name": "Password",
+      "type": "string",
+      "label": "Password",
+      "defaultValue": "Password",
+      "required": true,
+      "helpMarkDown": "Password"
+    },
+    {
+      "name": "LocalGroups",
+      "type": "string",
+      "label": "Local Groups",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "Local Groups names separeted with comma"
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "createLocalUser.ps1"
+    }
+  }
+}
