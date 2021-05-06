@@ -1,0 +1,49 @@
+{
+  "id": "8ab90060-87e6-11eb-b1ba-7f6c1a371e5c",
+  "name": "GetYoungestCertForHostHeader",
+  "friendlyName": "Get Youngest Cert For Host Header",
+  "description": "This task gets youngest certificate for host header",
+  "author": "DTI d.o.o Belgrade, Serbia",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "4"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "GetYoungestCertForHostHeader $(message)",
+  "inputs": [
+    {
+      "name": "HostHeader",
+      "type": "string",
+      "label": "Host Header",
+      "required": true,
+      "helpMarkDown": "Host Header"
+    },
+    {
+      "name": "FriendlyName",
+      "type": "string",
+      "label": "Friendly Name",
+      "required": true,
+      "helpMarkDown": "Friendly Name"
+    },
+    {
+      "name": "ResultName",
+      "type": "string",
+      "label": "Result Name",
+      "required": true,
+      "helpMarkDown": "return result variable"
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "GetYoungestCertForHostHeader.ps1"
+    }
+  }
+}

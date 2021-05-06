@@ -1,0 +1,36 @@
+{
+    "manifestVersion": 1,
+    "id": "CreateEventLog",
+    "name": "Create event log",
+    "version": "0.1.7",
+    "publisher": "DataTechInternational",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "A task creates event log and source",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "CreateEventLog/icon.png"        
+    },
+    "files": [
+        {
+            "path": "CreateEventLog"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "CreateEventLog",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "CreateEventLog"
+            }
+        }
+    ]
+}

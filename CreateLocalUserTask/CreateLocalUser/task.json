@@ -1,7 +1,7 @@
 {
   "id": "8ab90060-87e6-11eb-b1ba-7f6c1a371e5d",
   "name": "CreateLocalUser",
-  "friendlyName": "CreateLocalUser",
+  "friendlyName": "Create Local User",
   "description": "This task creates local user and adds him to local groups",
   "author": "DTI d.o.o Belgrade, Serbia",
   "helpMarkDown": "Replace with markdown to show in help",
@@ -14,7 +14,7 @@
   "version": {
     "Major": "0",
     "Minor": "2",
-    "Patch": "0"
+    "Patch": "1"
   },
   "minimumAgentVersion": "1.95.0",
   "instanceNameFormat": "CreateLocalUser $(message)",

@@ -1,0 +1,36 @@
+{
+    "manifestVersion": 1,
+    "id": "GetYoungestCertForHostHeader",
+    "name": "Get Youngest Cert For Host Header",
+    "version": "0.1.4",
+    "publisher": "DataTechInternational",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "A task gets youngest certificate for host header",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "GetYoungestCertForHostHeader/icon.png"        
+    },
+    "files": [
+        {
+            "path": "GetYoungestCertForHostHeader"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "GetYoungestCertForHostHeader",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "GetYoungestCertForHostHeader"
+            }
+        }
+    ]
+}

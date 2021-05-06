@@ -1,0 +1,60 @@
+{
+  "id": "B8E4EE29-3B81-4774-BA87-F7095AE024CE",
+  "name": "CreateEventLog",
+  "friendlyName": "Create Event Log",
+  "description": "A task creates event log and source",
+  "author": "DTI d.o.o Belgrade, Serbia",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "7"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "CreateEventLog $(message)",
+  "inputs": [
+    {
+      "name": "SourceName",
+      "type": "string",
+      "label": "Source Name",
+      "defaultValue": "Source Name",
+      "required": true,
+      "helpMarkDown": "Source Name"
+    },
+    {
+      "name": "LogName",
+      "type": "string",
+      "label": "Log Name",
+      "defaultValue": "Log Name",
+      "required": true,
+      "helpMarkDown": "Log Name"
+    },
+    {
+      "name": "AutoBackupLogFilesName",
+      "type": "string",
+      "label": "Auto Backup Log Files Name",
+      "defaultValue": "AutoBackupLogFiles",
+      "required": true,
+      "helpMarkDown": "Auto Backup Log Files Name"
+    },
+    {
+      "name": "MaximumLogSize",
+      "type": "int",
+      "label": "Maximum Log Size",
+      "defaultValue": 100,
+      "required": true,
+      "helpMarkDown": "Maximum size of log in MB"
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "createEventLog.ps1"
+    }
+  }
+}

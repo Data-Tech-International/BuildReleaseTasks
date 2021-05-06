@@ -1,0 +1,36 @@
+{
+    "manifestVersion": 1,
+    "id": "GenerateRandomPassword",
+    "name": "Generate Random Password",
+    "version": "0.1.4",
+    "publisher": "DataTechInternational",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "A task generate random password",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "GenerateRandomPassword/icon.png"        
+    },
+    "files": [
+        {
+            "path": "GenerateRandomPassword"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "GenerateRandomPassword",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "GenerateRandomPassword"
+            }
+        }
+    ]
+}

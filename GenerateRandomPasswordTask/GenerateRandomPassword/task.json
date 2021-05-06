@@ -1,0 +1,59 @@
+{
+  "id": "8ab90060-87e6-11eb-b1ba-7f6c1a371e7c",
+  "name": "GenerateRandomPassword",
+  "friendlyName": "Generate Random Password",
+  "description": "This task generate random password",
+  "author": "DTI d.o.o Belgrade, Serbia",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "4"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "GenerateRandomPassword $(message)",
+  "inputs": [
+    {
+      "name": "MinimumPasswordLength",
+      "type": "int",
+      "label": "Minimum Password Length",
+      "defaultValue": 5,
+      "required": true,
+      "helpMarkDown": "Minimum lenght of password"
+    },
+    {
+      "name": "MaximumPasswordLength",
+      "type": "int",
+      "label": "Maximum Password Length",
+      "defaultValue": 10,
+      "required": true,
+      "helpMarkDown": "Maximum lenght of password"
+    },
+    {
+      "name": "NumberOfNonAlphanumericCharacters",
+      "type": "int",
+      "label": "Number Of NonAlphanumeric Characters",
+      "defaultValue": 5,
+      "required": true,
+      "helpMarkDown": "Number Of NonAlphanumeric Characters"
+    },
+    {
+      "name": "ResultName",
+      "type": "string",
+      "label": "Result Name",
+      "required": true,
+      "helpMarkDown": "return result variable"
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "generateRandomPassword.ps1"
+    }
+  }
+}
