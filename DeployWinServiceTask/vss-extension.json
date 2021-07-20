@@ -1,0 +1,36 @@
+{
+    "manifestVersion": 1,
+    "id": "DeployWinService",
+    "name": "Deploy Windows Service",
+    "version": "0.1.1",
+    "publisher": "DataTechInternational",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "A task deploy windows service",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "DeployWinService/icon.png"        
+    },
+    "files": [
+        {
+            "path": "DeployWinService"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "DeployWinService",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "DeployWinService"
+            }
+        }
+    ]
+}

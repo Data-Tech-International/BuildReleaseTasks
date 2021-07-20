@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "GetYoungestCertForHostHeader",
     "name": "Get Youngest Cert For Host Header",
-    "version": "0.1.4",
+    "version": "0.2.7",
     "publisher": "DataTechInternational",
     "targets": [
         {

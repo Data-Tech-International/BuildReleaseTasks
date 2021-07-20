@@ -1,0 +1,52 @@
+{
+  "id": "EAD94E1C-E2F5-4DEA-BACA-7962525222F7",
+  "name": "FolderAccessManagement",
+  "friendlyName": "Folder Access Management",
+  "description": "This task is used to give access rights to a folder",
+  "author": "DTI d.o.o Belgrade, Serbia",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "2"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "FolderAccessManagement $(message)",
+  "inputs": [
+    {
+      "name": "Username",
+      "type": "string",
+      "label": "Username",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Username"
+    },
+    {
+      "name": "FolderName",
+      "type": "string",
+      "label": "Folder Name",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "FolderName"
+    },
+    {
+      "name": "AccessRights",
+      "type": "string",
+      "label": "Access Rights",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Access rights names separeted with comma"
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "folderAccessManagement.ps1"
+    }
+  }
+}

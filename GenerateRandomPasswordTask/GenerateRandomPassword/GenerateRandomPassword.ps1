@@ -9,7 +9,7 @@ Add-Type -AssemblyName 'System.Web'
 $length = Get-Random -Minimum $MinimumPasswordLength -Maximum $MaximumPasswordLength
 $password = [System.Web.Security.Membership]::GeneratePassword($length,$NumberOfNonAlphanumericCharacters)
 
-Write-Host "##vso[task.setvariable variable=$ResultName]$password"    
+Write-Output "##vso[task.setvariable variable=$ResultName]$password"    
 
 
 

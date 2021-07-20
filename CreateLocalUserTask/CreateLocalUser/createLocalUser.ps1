@@ -5,7 +5,7 @@ Write-Output "Start user creating"
 [String]$Password = Get-VstsInput -Name Password -Require
 [String]$LocalGroups = Get-VstsInput -Name LocalGroups
 
-Write-Output "ComputerName: $ComputerName,  Username: $Username, Password: $Password, LocalGroups: $LocalGroups"
+Write-Output "Adding local user $Username on $ComputerName and to local groups $LocalGroups"
 
 $localUser = Get-WmiObject Win32_UserAccount -Filter "Domain='$ComputerName' and Name='$Username'"
 if(!$localUser)
@@ -54,20 +54,21 @@ if ($LocalGroupsArray.Count -gt 0){
     try {
         $LocalUserSvc = [adsi]"WinNT://$ComputerName/$Username,user"
         $LocalGroupsArray | ForEach-Object {
-            Write-Output "Adding $Username to group $_"
-            $Group = [ADSI]"WinNT://$ComputerName/$_,Group"
+            $groupName=$_.Trim()
+            Write-Output "Adding $Username to group $groupName"
+            $Group = [ADSI]"WinNT://$ComputerName/$groupName,Group"
 
             if ($Group -ne $null){
                 $membersObj = @($Group.psbase.Invoke("Members")) 
                 $members = ($membersObj | foreach {$_.GetType().InvokeMember("Name", 'GetProperty', $null, $_, $null)})
 
                 If ($members -contains $Username) {
-                    Write-Output "$Username exists in the group $_"
+                    Write-Output "$Username exists in the group $groupName"
                 } Else {
                     $Group.Add($LocalUserSvc.Path)
                 }
             } Else {
-                Write-Output "Group $_ doesn't exists on Computer: $ComputerName"
+                Write-Output "Group $groupName doesn't exists on Computer: $ComputerName"
             }
             
             remove-variable Group

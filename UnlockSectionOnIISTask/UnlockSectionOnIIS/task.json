@@ -1,0 +1,42 @@
+{
+  "id": "28B5CFC4-441A-4897-B2A7-1FE6272AEBA9",
+  "name": "UnlockSectionOnIIS",
+  "friendlyName": "Unlock Section On IIS",
+  "description": "This task unlock sections on IIS",
+  "author": "DTI d.o.o Belgrade, Serbia",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "2"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "UnlockSectionOnIIS $(message)",
+  "inputs": [
+    {
+      "name": "SectionNames",
+      "type": "string",
+      "label": "Section Names",
+      "required": true,
+      "helpMarkDown": "Section names separated by comma (,)"
+    },
+    {
+      "name": "SiteName",
+      "type": "string",
+      "label": "Site Name",
+      "required": true,
+      "helpMarkDown": "Site name"
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "UnlockSectionOnIIS.ps1"
+    }
+  }
+}

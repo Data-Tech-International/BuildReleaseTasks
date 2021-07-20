@@ -1,0 +1,42 @@
+{
+  "id": "4a4b4328-8d74-4c0f-9f20-4ba76915655c",
+  "name": "PrepareSiteBindings",
+  "friendlyName": "Prepare Site Bindings",
+  "description": "This task prepares site bindings",
+  "author": "DTI d.o.o Belgrade, Serbia",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "2",
+    "Patch": "3"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "PrepareSiteBindings $(message)",
+  "inputs": [
+    {
+      "name": "Bindings",
+      "type": "string",
+      "label": "Bindings",
+      "required": true,
+      "helpMarkDown": "Bindings in json format [{protocol:'http', hostHeader: 'aaa.bbb.ccc', port: 80}, ...]"
+    },
+    {
+      "name": "ResultName",
+      "type": "string",
+      "label": "Result Name",
+      "required": true,
+      "helpMarkDown": "return result variable"
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "PrepareSiteBindings.ps1"
+    }
+  }
+}

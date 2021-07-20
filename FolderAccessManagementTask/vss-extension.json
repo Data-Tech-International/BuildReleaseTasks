@@ -1,0 +1,36 @@
+{
+    "manifestVersion": 1,
+    "id": "FolderAccessManagement",
+    "name": "Folder access management",
+    "version": "0.1.2",
+    "publisher": "DataTechInternational",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "A task is used to give access rights to a folder",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "FolderAccessManagement/icon.png"        
+    },
+    "files": [
+        {
+            "path": "FolderAccessManagement"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "FolderAccessManagement",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "FolderAccessManagement"
+            }
+        }
+    ]
+}

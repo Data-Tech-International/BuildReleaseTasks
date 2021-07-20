@@ -1,0 +1,35 @@
+{
+  "id": "4BE98454-09AD-469F-8B6A-B6B75C79F228",
+  "name": "LoadUserProfileToIISAppPools",
+  "friendlyName": "Load User Profile To IIS AppPools",
+  "description": "This task load user profile to IIS application pools",
+  "author": "DTI d.o.o Belgrade, Serbia",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "4"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "LoadUserProfileToIISAppPools $(message)",
+  "inputs": [
+    {
+      "name": "AppPools",
+      "type": "string",
+      "label": "App Pools",
+      "required": true,
+      "helpMarkDown": "App Pool names"
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "LoadUserProfileToIISAppPools.ps1"
+    }
+  }
+}

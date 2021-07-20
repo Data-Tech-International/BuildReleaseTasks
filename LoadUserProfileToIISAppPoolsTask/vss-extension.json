@@ -1,0 +1,36 @@
+{
+    "manifestVersion": 1,
+    "id": "LoadUserProfileToIISAppPools",
+    "name": "Load User Profile To IIS AppPools",
+    "version": "0.1.4",
+    "publisher": "DataTechInternational",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "A task load user profile to IIS application pools",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "LoadUserProfileToIISAppPools/icon.png"        
+    },
+    "files": [
+        {
+            "path": "LoadUserProfileToIISAppPools"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "LoadUserProfileToIISAppPools",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "LoadUserProfileToIISAppPools"
+            }
+        }
+    ]
+}

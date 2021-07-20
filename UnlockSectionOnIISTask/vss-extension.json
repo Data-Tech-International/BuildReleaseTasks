@@ -1,0 +1,36 @@
+{
+    "manifestVersion": 1,
+    "id": "UnlockSectionOnIIS",
+    "name": "Unlock Section On IIS",
+    "version": "0.1.2",
+    "publisher": "DataTechInternational",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "A task unlock sections on IIS",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "UnlockSectionOnIIS/icon.png"        
+    },
+    "files": [
+        {
+            "path": "UnlockSectionOnIIS"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "UnlockSectionOnIIS",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "UnlockSectionOnIIS"
+            }
+        }
+    ]
+}

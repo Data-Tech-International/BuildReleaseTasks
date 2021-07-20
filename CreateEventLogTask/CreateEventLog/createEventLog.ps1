@@ -17,7 +17,7 @@ if($SourceName -ne ""){
         Write-Output "  Source $SourceName registerd for Eventlog $LogName created"
     }
     if((Get-EventLog -List | Where-Object {$_.log -eq $LogName}).MaximumKilobytes -ne $MaximumLogSize*1024)
-        {Limit-EventLog -LogName $LogName -MaximumSize "$($MaximumLogSize)MB";
+        {Limit-EventLog -LogName $LogName -MaximumSize "$($MaximumLogSize*1024*1024)";
         Write-Output "  Eventlog $LogName MaximumSize set to $MaximumLogSize MB"}
     $regkey = "HKLM:\SYSTEM\CurrentControlSet\services\eventlog\$LogName"
     if((Get-ItemProperty $regkey).PSObject.Properties.Name -contains $AutoBackupLogFilesName)

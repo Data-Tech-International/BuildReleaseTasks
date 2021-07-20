@@ -1,0 +1,36 @@
+{
+    "manifestVersion": 1,
+    "id": "PrepareSiteBindings",
+    "name": "Prepare Site Bindings",
+    "version": "0.2.3",
+    "publisher": "DataTechInternational",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "A task prepares site bindings",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "PrepareSiteBindings/icon.png"        
+    },
+    "files": [
+        {
+            "path": "PrepareSiteBindings"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "PrepareSiteBindings",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "PrepareSiteBindings"
+            }
+        }
+    ]
+}

@@ -5,30 +5,37 @@ Write-Output "Start searching for the youngest cert"
 [string]$Resultname = Get-VstsInput -Name ResultName
 
 $youngestCert = $null
-$certAgeInDays = 0
-$now=[System.DateTime]::Now
+$certAge = [System.DateTime]::MinValue
+$dateTimeMinValue=[System.DateTime]::MinValue
 $certs = Get-ChildItem -Path Cert:\LocalMachine\My
+$youngestCertThumbprint = $null
 
-foreach($singleCert in $certs)
-{
-    $allExtensions =  $singleCert.Extensions
-    foreach($singleExtension in $allExtensions)
+if ($HostHeader -ne $null -and $HostHeader -ne ""){
+    $hostHeader=$HostHeader.Trim()
+
+    foreach($singleCert in $certs)
     {
-        if($singleExtension.Oid.FriendlyName -eq $FriendlyName)
+        $allExtensions =  $singleCert.Extensions
+        foreach($singleExtension in $allExtensions)
         {
-            if($singleExtension.Format(1).Contains("DNS Name=$HostHeader") -or $singleCert.Subject.Contains("CN=$HostHeader"))
+            if($singleExtension.Oid.FriendlyName -eq $FriendlyName)
             {
-                If($($now-$singleCert.NotBefore).TotalDays -lt $certAgeInDays -or $certAgeInDays -eq 0)
+                if($singleExtension.Format(1).Contains("DNS Name=$hostHeader") -or $singleCert.Subject.Contains("CN=$hostHeader"))
                 {
-                    $youngestCert=$singleCert
-                    $certAgeInDays = $($trenutak-$singleCert.NotBefore).TotalDays
+                    If($certAge -lt $singleCert.NotBefore -or $certAge -eq $dateTimeMinValue)
+                    {
+                        $youngestCert=$singleCert
+                        $certAge = $singleCert.NotBefore
+                    }
                 }
-
             }
         }
     }
+    Write-Output "HostHeader: $hostHeader"
+    $youngestCertThumbprint=$youngestCert.Thumbprint
+    Write-Output "Thumbprint: $youngestCertThumbprint"
 }
-$youngestCertThumbprint=$youngestCert.Thumbprint
+
 Write-Host "##vso[task.setvariable variable=$ResultName]$youngestCertThumbprint"
 
     
