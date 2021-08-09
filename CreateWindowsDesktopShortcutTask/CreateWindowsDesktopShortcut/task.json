@@ -1,0 +1,70 @@
+{
+  "id": "82674C0E-0AF3-410C-A937-9A5622C8C400",
+  "name": "CreateWindowsDesktopShortcut",
+  "friendlyName": "Create windows desktop shortcut",
+  "description": "This task for creating windows desktop shortcut",
+  "author": "DTI d.o.o Belgrade, Serbia",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "0"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "CreateWindowsDesktopShortcut $(message)",
+  "inputs": [
+    {
+      "name": "SourceFileLocation",
+      "type": "string",
+      "label": "Source file location",
+      "required": true,
+      "helpMarkDown": "Source file location of shortcut"
+    },
+    {
+      "name": "WorkingDirectory",
+      "type": "string",
+      "label": "Working directory",
+      "required": false,
+      "helpMarkDown": "Working directory. Default value is source file location folder"
+    },
+    {
+      "name": "ShortcutName",
+      "type": "string",
+      "label": "Shortcut name",
+      "required": true,
+      "helpMarkDown": "Shortcut name"
+    },
+    {
+      "name": "IconLocation",
+      "type": "string",
+      "label": "Icon location",
+      "required": false,
+      "helpMarkDown": "Icon location. Default value will be used if none is provided"
+    },
+    {
+      "name": "Description",
+      "type": "string",
+      "label": "Description",
+      "required": false,
+      "helpMarkDown": "Description"
+    },
+    {
+      "name": "RunAsAdministrator",
+      "type": "boolean",
+      "label": "Run as administrator",
+      "required": false,
+      "helpMarkDown": "Default value is false"
+    }    
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "CreateWindowsDesktopShortcut.ps1"
+    }
+  }
+}
