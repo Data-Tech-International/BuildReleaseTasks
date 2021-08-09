@@ -1,0 +1,36 @@
+{
+    "manifestVersion": 1,
+    "id": "CreateWindowsDesktopShortcut",
+    "name": "Create windows desktop shortcut",
+    "version": "0.1.0",
+    "publisher": "DataTechInternational",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "A task for creating windows desktop shortcut",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "CreateWindowsDesktopShortcut/icon.png"        
+    },
+    "files": [
+        {
+            "path": "CreateWindowsDesktopShortcut"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "CreateWindowsDesktopShortcut",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "CreateWindowsDesktopShortcut"
+            }
+        }
+    ]
+}
