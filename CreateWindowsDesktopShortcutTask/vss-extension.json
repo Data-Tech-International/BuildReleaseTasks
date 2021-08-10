@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "CreateWindowsDesktopShortcut",
     "name": "Create windows desktop shortcut",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "DataTechInternational",
     "targets": [
         {

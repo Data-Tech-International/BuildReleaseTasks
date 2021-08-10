@@ -4,7 +4,7 @@
   "friendlyName": "Create windows desktop shortcut",
   "description": "This task for creating windows desktop shortcut",
   "author": "DTI d.o.o Belgrade, Serbia",
-  "helpMarkDown": "Replace with markdown to show in help",
+  "helpMarkDown": "",
   "category": "Utility",
   "visibility": [
     "Build",
@@ -14,7 +14,7 @@
   "version": {
     "Major": "0",
     "Minor": "1",
-    "Patch": "0"
+    "Patch": "1"
   },
   "minimumAgentVersion": "1.95.0",
   "instanceNameFormat": "CreateWindowsDesktopShortcut $(message)",
