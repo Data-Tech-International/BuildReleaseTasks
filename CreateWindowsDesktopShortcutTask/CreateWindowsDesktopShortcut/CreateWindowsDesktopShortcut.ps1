@@ -5,7 +5,7 @@ Write-Output "Starting: Create desktop shortcut"
 [String] $ShortcutName = Get-VstsInput -Name ShortcutName -Require
 [String] $IconLocation = Get-VstsInput -Name IconLocation -Default "%SystemRoot%\system32\SHELL32.dll, 46"
 [String] $Description = Get-VstsInput -Name Description
-[Boolean] $RunAsAdministrator = Get-VstsInput -Name RunAsAdministrator -Default $false
+[Boolean] $RunAsAdministrator = Get-VstsInput -Name RunAsAdministrator -Default $False -AsBool
 
 
 
